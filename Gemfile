@@ -26,6 +26,8 @@ gem 'dotenv-rails'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'faraday'
+gem 'rack-cors'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
