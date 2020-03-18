@@ -1,36 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Items</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Link</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container">
+  <div class="card-deck">
     <% @items.each do |item| %>
-      <tr>
-        <td><%= item[0].link %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="card" style="width: 12rem;">
+        <img src="<%= item&.second.try(:[],'image')%>" class="card-img-top" alt="..." style="width: 12rem">
+        <div class="card-body" style="width: 12rem;">
+          <h5 class="card-title"> <%= item.second['title']%> </h5>
+          <p class="card-text"> <%= item.second['description']%> </p>
+          <a href=<%= item.first.link %> class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<div class="card" style="width: 18rem;">
-  <img src="<%= @items.first.second['image']%>" class="card-img-top" alt="..." style="width: 12rem;">
-  <div class="card-body">
-    <h5 class="card-title"> <%= @items.first.second['title']%> </h5>
-    <p class="card-text"> <%= @items.first.second['description']%> </p>
-    <a href=<%= @items.first.first.link %> class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
-
-<br>
-
-<%= link_to 'New Item', new_item_path %>
