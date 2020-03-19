@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  include ActionView::Helpers::DateHelper
+
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -7,7 +9,11 @@ class ItemsController < ApplicationController
 
   def meta(item)
     url = 'https://api.urlmeta.org'
-    resp = Faraday.get(url, {url: item.link}, {'Authorization' => ENV['URLMETA_KEY']})
+    params = item.link
+
+    resp = Rails.cache.fetch([url, params], expires: 1.hour) do
+      Faraday.get(url, {url: params}, {'Authorization' => ENV['URLMETA_KEY']})
+    end
 
     return item, JSON.parse(resp.body)['meta']
   end
