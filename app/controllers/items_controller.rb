@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all.map { |item| meta(item) }
+    @items = Item.where(user: current_user).all.map { |item| meta(item) }
   end
 
   def meta(item)
