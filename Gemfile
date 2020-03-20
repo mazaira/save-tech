@@ -28,6 +28,7 @@ gem 'jquery-rails'
 gem 'faraday'
 gem 'rack-cors'
 gem 'devise'
+gem 'omniauth-keycloak'
 
 
 # Use Active Storage variant

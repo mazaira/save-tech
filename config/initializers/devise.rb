@@ -32,6 +32,12 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
 
+  config.omniauth :keycloak_openid,
+    ENV['KEYCLOAK_CLIENT_NAME'],
+    ENV['KEYCLOAK_CLIENT_SECRET'],
+    client_options: { site: ENV['KEYCLOAK_URL'], realm: ENV['KEYCLOAK_REALM'] },
+    :strategy_class => OmniAuth::Strategies::KeycloakOpenId
+
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
