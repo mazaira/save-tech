@@ -27,6 +27,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'faraday'
 gem 'rack-cors'
+gem 'devise'
 
 
 # Use Active Storage variant
