@@ -5,7 +5,6 @@ class Api::ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-
     if @item.save
       render json: @item
     else
@@ -23,6 +22,6 @@ class Api::ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:link)
+      params.require(:item).permit(:link, :user_id)
     end
 end
