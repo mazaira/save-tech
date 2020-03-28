@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
 
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
+  Composed = Struct.new(:object, :meta)
+
   def index
     @items = Item.where(user: current_user).all.map { |item| meta(item) }
   end
@@ -10,12 +12,11 @@ class ItemsController < ApplicationController
   def meta(item)
     url = 'https://api.urlmeta.org'
     params = item.link
-
     resp = Rails.cache.fetch([url, params], expires: 1.hour) do
       Faraday.get(url, {url: params}, {'Authorization' => ENV['URLMETA_KEY']})
     end
 
-    return item, JSON.parse(resp.body)['meta']
+    Composed.new(item, JSON.parse(resp.body)['meta'])
   end
 
   def show
@@ -44,10 +45,8 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
-        format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,7 +55,6 @@ class ItemsController < ApplicationController
     @item.destroy
     respond_to do |format|
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
