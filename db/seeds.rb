@@ -5,7 +5,7 @@
 #     - 2 items with tag 'one'
 #     - 2 items with tag 'two'
 #     - 2 items without tag.
-user1 = FactoryBot.create :user
+user1 = FactoryBot.create(:user, email: 'test@test.com')
 user2 = FactoryBot.create :user
 
 [user1, user2].map do |user|
