@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   has_many :items
 
+  acts_as_tagger
+
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first

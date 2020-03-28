@@ -22,6 +22,6 @@ class Api::ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:link, :user_id)
+      params.require(:item).permit(:link, :user_id, :tag_list)
     end
 end

@@ -66,6 +66,6 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:link)
+      params.require(:item).permit(:link, :user_id, :tag_list)
     end
 end
