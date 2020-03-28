@@ -1,10 +1,7 @@
 <ul class="list-group">
-  <p> <%= tags.first.name %></p>
-  <li class="list-group-item">Cras justo odio</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
+  <% tags&.each do |tag| %>
+  <%= link_to tag.name, filter_items_path(name: tag.name), :remote => true %>
+  <% end %>
 </ul>
 
 <!-- <script>

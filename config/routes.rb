@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root to: 'items#index'
 
   resources :items
+  get '/filter_items' => 'items#from_tag', as: 'filter_items'
 
   namespace :api do
     resources :items

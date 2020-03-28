@@ -60,6 +60,13 @@ class ItemsController < ApplicationController
     end
   end
 
+  def from_tag
+      @selected = Item.tagged_with( params[:name], on: :tags, owned_by: current_user).map { |item| meta(item) }
+      respond_to do |format|
+          format.js
+      end
+  end
+
   private
     def set_item
       @item = Item.find(params[:id])
