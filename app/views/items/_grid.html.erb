@@ -2,7 +2,7 @@
   <% items.each do |item| %>
     <div class="col-md-4">
       <div class="card mb-4 box-shadow">
-        <img class="card-img-top" src="<%= item.meta.try(:[],'image') || image_url('emoji.jpeg') %>" alt="Card image cap">
+        <img class="card-img-top" src="<%= item.meta.try(:[],'image') || image_url('default.jpg') %>" alt=''>
         <div class="card-body">
           <h5 class="card-title"> <%= item.meta['title'] || item.object.link %> </h5>
           <p class="card-text"><%= item.meta['description'] %></p>
