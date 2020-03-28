@@ -5,7 +5,7 @@
         <img class="card-img-top" src="<%= item.meta.try(:[],'image') || image_url('default.jpg') %>" alt=''>
         <div class="card-body">
           <h5 class="card-title"> <%= item.meta['title'] || item.object.link %> </h5>
-          <p class="card-text"><%= item.meta['description'] %></p>
+          <p class="card-text"><%= item.meta['description']&.first(60) %></p>
           <div class="d-flex justify-content-between align-items-center">
               <a href=<%= item.object.link %> class="btn btn-outline-primary">to site</a>
             <small class="text-muted"><%= time_ago_in_words(item.object.created_at) %></small>
