@@ -1,11 +1,15 @@
-<ul class="list-group">
-  <% tags&.each do |tag| %>
-  <%= link_to tag.name, filter_items_path(name: tag.name), :remote => true %>
-  <% end %>
-</ul>
+<div class="card tag-container">
+    <% tags&.each do |tag| %>
+    <%= link_to tag.name, filter_items_path(name: tag.name), class: 'tag btn btn-warning', remote: true %>
+    <% end %>
+</div>
 
-<!-- <script>
-  $('.tag').each(function(){
-          $(this).css({"left": Math.random() * window.outerWidth , "top": Math.random() * window.outerHeight}).textillate();
+<script>
+  $('.tag').each(function( index ) {
+    $(this).css({
+      left : Math.random() * ($('.tag-container').width() - $('.tag').outerWidth()),
+      top: Math.random() * ($('.tag-container').height() - $('.tag').outerHeight())
+    });
   });
-</script> -->
+</script>
+

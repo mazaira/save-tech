@@ -13,3 +13,23 @@
  */
 
 @import "bootstrap";
+
+.navbar-button {
+  margin-left: ($spacer * .5);
+  margin-right: ($spacer * .5);
+}
+
+.tag-container {
+  height: 480px;
+  max-width: 300px;
+  display: flex;
+  border-color: black;
+}
+
+.tag {
+  position: absolute;
+}
+
+.container-fluid {
+  margin-top: ($spacer);
+}
