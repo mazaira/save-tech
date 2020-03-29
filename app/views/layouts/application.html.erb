@@ -17,14 +17,17 @@
             <li class="nav-item active">
               <a class="navbar-brand" href="/">Save Tech 📖 </a>
             </li>
+            <li class="nav-item active">
+              <%= link_to "Add", new_item_path, class: 'btn btn-outline-dark my-2 my-sm-0 navbar-button'%>
+            </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <% if user_signed_in? %>
               <%= link_to "#{current_user.email}", edit_user_registration_path, class: 'btn btn-outline-dark my-2 my-sm-0 navbar-button' %>
               <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark my-2 my-sm-0 navbar-button' %>
             <% else %>
-              <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-outline-success my-2 my-sm-0 navbar-button'%>
-              <%= link_to "Login", new_user_session_path, class: 'btn btn-outline-success my-2 my-sm-0 navbar-button' %>
+              <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-outline-dark my-2 my-sm-0 navbar-button'%>
+              <%= link_to "Login", new_user_session_path, class: 'btn btn-outline-dark my-2 my-sm-0 navbar-button' %>
             <% end %>
           </form>
         </div>
@@ -32,5 +35,7 @@
     </header>
 
     <%= yield %>
+
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   </body>
 </html>
