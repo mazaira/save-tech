@@ -4,8 +4,8 @@ class Api::ItemsController < ApplicationController
 
 
   def create
-    @item = Item.new(link: item_params[:link], user_id: item_params[:user_id])
-    if current_user.tag(@item, with: item_params[:tag_list], on: :tags)
+    @item = ::ItemService.new(item_params, current_user)
+    if @item.create
       render json: @item
     else
       render json: { error: '422, something went wrong' }

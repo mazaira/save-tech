@@ -30,11 +30,11 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = ::ItemService.new(item_params, current_user)
 
     respond_to do |format|
-      if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
+      if @item.create
+        format.html { render :index, notice: 'Item was successfully created.' }
       else
         format.html { render :new }
       end
