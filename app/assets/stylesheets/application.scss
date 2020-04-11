@@ -44,4 +44,23 @@
   margin-bottom: 5px;
 }
 
+.row {
+  margin: 0;
+  flex: auto;
+}
 
+.col-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.session-buttons {
+  float: right;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

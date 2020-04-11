@@ -1,23 +1,25 @@
 <header>
-  <nav class="navbar navbar-expand-sm navbar-light sm-light">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto col-sm">
-        <li class="nav-item active">
-          <a class="navbar-brand" href="/">Save Tech 📖 </a>
-        </li>
-      </ul>
-      <div class="col-sm">
-        <%= link_to fa_icon("plus-square", text: 'New item').html_safe, new_item_path, class: 'navbar-brand'%>
+  <nav class="navbar navbar-light bg-light">
+    <div class='row'>
+      <div class='col-sm'>
+        <%= link_to fa_icon("save", text: 'Save Tech', right: true), items_path, class: 'navbar-brand' %>
       </div>
-      <form class=" col-sm form-inline my-2 my-lg-0">
-        <% if user_signed_in? %>
-          <%= link_to "#{current_user.email}", edit_user_registration_path, class: 'btn btn-outline-dark my-2 my-sm-0 navbar-button' %>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark my-2 my-sm-0 navbar-button' %>
-        <% else %>
-          <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-outline-dark my-2 my-sm-0 navbar-button'%>
-          <%= link_to "Login", new_user_session_path, class: 'btn btn-outline-dark my-2 my-sm-0 navbar-button' %>
-        <% end %>
-      </form>
+
+      <div class='col-sm col-centered'>
+          <%= link_to fa_icon("plus-square", text: 'New item').html_safe, new_item_path, class: 'navbar-brand'%>
+      </div>
+
+      <div class='col-sm'>
+        <div class='session-buttons'>
+          <% if user_signed_in? %>
+            <%= link_to "#{current_user.email}", edit_user_registration_path, class: 'btn btn-outline-dark navbar-button' %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark navbar-button' %>
+          <% else %>
+            <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-outline-dark navbar-button'%>
+            <%= link_to "Login", new_user_session_path, class: 'btn btn-outline-dark navbar-button' %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </nav>
 </header>
