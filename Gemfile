@@ -22,7 +22,8 @@ gem 'omniauth-keycloak'
 gem 'pg'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'simple_form'
-gem 'feathericon-rails'
+gem "font-awesome-rails"
+
 
 
 gem 'bootsnap', '>= 1.4.2', require: false

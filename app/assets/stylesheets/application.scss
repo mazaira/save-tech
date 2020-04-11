@@ -13,6 +13,7 @@
  */
 
 @import "bootstrap";
+@import "font-awesome";
 
 .navbar-button {
   margin-left: ($spacer * .5);
@@ -35,3 +36,12 @@
 .container-fluid {
   margin-top: ($spacer);
 }
+
+.pending-to-filter {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 5px;
+}
+
+

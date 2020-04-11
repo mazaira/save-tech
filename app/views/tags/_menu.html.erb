@@ -1,3 +1,7 @@
+<div>
+  <button type="button" class="btn btn-light pending-to-filter">Pending to filter</button>
+</div>
+
 <div class="card tag-container">
     <% tags&.each do |tag| %>
     <%= link_to tag.name, filter_items_path(name: tag.name), class: 'tag btn', remote: true %>
@@ -6,14 +10,14 @@
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.4/randomColor.min.js'></script>
 <script>
-  $('.tag').each(function( index ) {
-    var longestTag = Math.max.apply(null, $(".tag").map(function () { return $(this).outerWidth(); }).get());
+  var longestTag = Math.max.apply(null, $(".tag").map(function () { return $(this).outerWidth(); }).get());
+  var tagHeight = $('.tag').outerHeight();
+  $('.tag').each(function() {
     $(this).css({
       left : Math.random() * ($('.tag-container').width() - longestTag),
-      top: Math.random() * ($('.tag-container').height() - $('.tag').outerHeight()),
+      top: Math.random() * ($('.tag-container').height() - tagHeight),
       "background-color": randomColor(),
       "mix-blend-mode": 'exclusion',
     });
   });
 </script>
-

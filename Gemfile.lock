@@ -106,9 +106,9 @@ GEM
       i18n (>= 0.7)
     faraday (0.17.0)
       multipart-post (>= 1.2, < 3)
-    feathericon-rails (1.0.0)
-      rails (>= 4.0.0)
     ffi (1.12.2)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hashie (4.1.0)
@@ -284,7 +284,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   faraday
-  feathericon-rails
+  font-awesome-rails
   jbuilder (~> 2.7)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
