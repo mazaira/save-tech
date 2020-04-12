@@ -13,14 +13,16 @@
         </div>
 
         <div class="card-body">
-          <a href=<%= item.object.link %> class="card-text"><%= item.meta['description']&.first(70).try(:+, '...') %></a>
+          <a class='card-text item-description' href=<%= item.object.link %>>
+            <%= item.meta['description']&.first(70).try(:+, '...') %>
+          </a>
           <div class="d-flex tag-box">
             <% item.object.tags.pluck(:name).map do |tag| %>
-              <%= link_to tag, filter_items_path(name: tag), class: 'btn btn-sm btn--themed btn--card', remote: true %>
+              <%= link_to tag, filter_items_path(name: tag), class: 'btn btn-sm btn-outline-info btn--card', remote: true %>
             <% end %>
           </div>
           <div class='timestamp'>
-            <small class="text-muted"><%= time_ago_in_words(item.object.created_at) %></small>
+            <small class="text-muted"><%= "#{time_ago_in_words(item.object.created_at).gsub('about','')} ago" %></small>
           </div>
         </div>
       </div>

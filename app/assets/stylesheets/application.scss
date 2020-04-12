@@ -56,6 +56,10 @@ a, a:hover {
   border-radius: 1.56rem;
   border-width: 0.2rem;
 
+  .list-group {
+    margin-top: 0.5rem;
+  }
+
   .list-group-item {
     border: 0;
     height: 2.9rem;
@@ -112,13 +116,20 @@ a, a:hover {
   .card-title {
     padding: 1rem;
     overflow: hidden;
+    max-height: 5.7rem;
   }
   .card-body {
     padding-top: 0.2rem;
   }
 
+  .item-description {
+    height: 3rem;
+    display: flex;
+  }
+
   .tag-box {
-    height: 31px;
+    height: 2rem;
+    margin-top: 0.6rem;
   }
 
   .timestamp {
