@@ -1,13 +1,17 @@
 <div>
-  <button type="button" class="btn btn-light pending-to-filter">Pending to filter</button>
+  <%= link_to 'Pending to filter',
+    pending_to_filter_path,
+    class: 'btn btn-light pending-to-filter',
+    remote: true
+  %>
 </div>
 
 <div class="tag-container">
   <ul class='list-group'>
     <% tags&.each do |tag| %>
     <li class='list-group-item d-flex'>
-      <%= link_to tag.name, filter_items_path(name: tag.name), class: 'fixed-tag btn', remote: true %>
-      <%# <span class="badge badge-primary badge-pill">10</span> %>
+      <%= link_to tag.name, filter_items_path(name: tag.name), class: 'fixed-tag btn btn--themed', remote: true %>
+      <%# <span class="badge badge-primary badge-pill">10</span>  TODO add amount of items per tag%>
     </li>
     <% end %>
   </ul>
@@ -22,7 +26,7 @@
   $('.fixed-tag').each(function() {
     $(this).css({
       left : Math.random() * ($('.tag-container').width() - longestTag),
-      "background-color": randomColor(),
+      // "background-color": randomColor(),
       "mix-blend-mode": 'exclusion',
     });
   });

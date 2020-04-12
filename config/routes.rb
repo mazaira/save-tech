@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :items
   get '/filter_items' => 'items#from_tag', as: 'filter_items'
+  get '/pending_to_filter' => 'items#pending_to_filter', as: 'pending_to_filter'
 
   namespace :api do
     resources :items

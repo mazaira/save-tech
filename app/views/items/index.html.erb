@@ -3,8 +3,13 @@
     <div class='col-2'>
       <%= render partial: "tags/menu", locals: { tags: current_user&.owned_tags } %>
     </div>
-    <div class='col-10' id='grid'>
-      <%= render partial: "grid", locals: { items: @items } %>
+    <div class='col-10'>
+      <div class= 'col-md-3' id='active-tags'>
+        <%= render partial: "active-tags", locals: { tags: 'Placeholder' } %>
+      </div>
+      <div id='grid'>
+        <%= render partial: "grid", locals: { items: @items } %>
+      </div>
     </div>
   </div>
 </div>
