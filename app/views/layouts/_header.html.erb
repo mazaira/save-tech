@@ -1,12 +1,12 @@
 <header>
-  <nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-light">
     <div class='row'>
       <div class='col-sm'>
-        <%= link_to fa_icon("save", text: 'Save Tech', right: true), items_path, class: 'navbar-brand' %>
+        <%= link_to fa_icon("plus-square", text: 'New item').html_safe, new_item_path, class: 'navbar-brand'%>
       </div>
 
       <div class='col-sm col-centered'>
-          <%= link_to fa_icon("plus-square", text: 'New item').html_safe, new_item_path, class: 'navbar-brand'%>
+        <%= link_to fa_icon("save", text: 'Save Tech', right: true), items_path, class: 'navbar-brand' %>
       </div>
 
       <div class='col-sm col-session'>

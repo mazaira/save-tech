@@ -1,6 +1,8 @@
 @import "bootstrap";
 @import "font-awesome";
 
+$primary-color: #fafafa;
+
 header {
   .row {
     margin: 0;
@@ -20,12 +22,17 @@ header {
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
+
+      .btn {
+        border-width: 0;
+      }
     }
   }
   .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: $primary-color;
   }
 
   .navbar-button {
@@ -35,7 +42,8 @@ header {
 }
 
 body {
-  background-color: #dbdbdb;
+  // background-color: #dbdbdb;
+  background-color: $primary-color;
 }
 
 a, a:hover {
@@ -115,6 +123,7 @@ a, a:hover {
   }
   .card-title {
     padding: 1rem;
+    padding-left: 0.2rem;
     overflow: hidden;
     max-height: 5.7rem;
   }
@@ -135,7 +144,9 @@ a, a:hover {
   .timestamp {
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;  }
+    align-items: flex-end;
+  }
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 0.4rem 0.4rem rgba(0,0,0, 0.2);
@@ -164,3 +175,5 @@ a, a:hover {
 .active-tags-placeholder {
   height: 38px;
 }
+
+
