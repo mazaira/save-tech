@@ -26,13 +26,11 @@ class ItemsController < ApplicationController
   def create
     @item = ::ItemService.new(item_params, current_user)
 
-    respond_to do |format|
       if @item.create
-        format.html { render :index, notice: 'Item was successfully created.' }
+        redirect_to items_url
       else
-        format.html { render :new }
+        raise
       end
-    end
   end
 
   def from_tag
