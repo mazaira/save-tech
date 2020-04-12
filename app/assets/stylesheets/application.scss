@@ -33,7 +33,12 @@ body {
   background-color: #dbdbdb;
 }
 
+.col-md-3, .col-md-4 {
+  padding: 0;
+}
+
 .tag-container {
+  margin-top: 1rem;
   height: 30rem;
   max-width: 18.75rem;
   display: flex;
@@ -43,7 +48,7 @@ body {
 
   .list-group-item {
     border: 0;
-    height: 2.6rem;
+    height: 2.9rem;
     padding: 0;
   }
 
@@ -61,6 +66,16 @@ body {
   width: 100%;
   border-radius: 15px;
   margin-bottom: 5px;
+  padding-left: 0.2rem;
+  text-align: center;
+
+  .fa-inbox{
+    font-size: 1.5rem;
+  }
+}
+
+#grid {
+  margin-top: 1rem;
 }
 
 .btn {
@@ -69,7 +84,21 @@ body {
   }
 }
 
-.css1 { font-size: 1.0em; }
-.css2 { font-size: 1.2em; }
-.css3 { font-size: 1.4em; }
-.css4 { font-size: 1.6em; }
+.card-item{
+    margin-right: 0.5rem !important;
+}
+
+.card {
+  .card-img-top {
+    padding:1rem;
+    width : 5rem;
+    height: 5rem;
+  }
+  .card-title {
+    padding: 1rem;
+    overflow: hidden;
+  }
+  .card-body {
+    padding-top: 0.2rem;
+  }
+}

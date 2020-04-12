@@ -26,11 +26,11 @@ class ItemsController < ApplicationController
   def create
     @item = ::ItemService.new(item_params, current_user)
 
-      if @item.create
-        redirect_to items_url
-      else
-        raise
-      end
+    if @item.create
+      redirect_to items_url
+    else
+      raise
+    end
   end
 
   def from_tag
