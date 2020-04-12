@@ -9,7 +9,7 @@
           <%= link_to fa_icon("plus-square", text: 'New item').html_safe, new_item_path, class: 'navbar-brand'%>
       </div>
 
-      <div class='col-sm'>
+      <div class='col-sm col-session'>
         <div class='session-buttons'>
           <% if user_signed_in? %>
             <%= link_to "#{current_user.email}", edit_user_registration_path, class: 'btn btn-outline-dark navbar-button' %>

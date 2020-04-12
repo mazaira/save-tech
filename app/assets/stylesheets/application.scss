@@ -13,10 +13,15 @@ header {
     align-items: center;
   }
 
-  .session-buttons {
-    float: right;
-  }
+  .col-session{
+    padding-right: 0;
 
+    .session-buttons {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+  }
   .navbar {
     display: flex;
     justify-content: center;
@@ -76,11 +81,16 @@ body {
 
 #grid {
   margin-top: 1rem;
+  margin-right: 1rem;
 }
 
 .btn {
   &--themed {
     background-color: #f0a500,
+  }
+
+  &--card {
+    margin-right: 0.3rem;
   }
 }
 
@@ -101,4 +111,22 @@ body {
   .card-body {
     padding-top: 0.2rem;
   }
+
+  .tag-box {
+    height: 31px;
+  }
+
+  .timestamp {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;  }
+}
+
+.delete-link {
+  position: absolute;
+  right: 3%;
+  top: 1%;
+  color: grey;
+  font-size: 1.3rem;
+  opacity: 40%;
 }

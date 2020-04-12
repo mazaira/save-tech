@@ -10,7 +10,7 @@
   <ul class='list-group'>
     <% tags&.each do |tag| %>
     <li class='list-group-item d-flex'>
-      <%= link_to tag.name, filter_items_path(name: tag.name), class: 'fixed-tag btn btn--themed', remote: true %>
+      <%= link_to tag.name, filter_items_path(name: tag.name), class: 'fixed-tag btn btn-sm btn--themed', remote: true %>
       <%# <span class="badge badge-primary badge-pill">10</span>  TODO add amount of items per tag%>
     </li>
     <% end %>

@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   Composed = Struct.new(:object, :meta)
 
   def index
-    @items = Item.where(user: current_user).all.map { |item| meta(item) }
+    @items = Item.where(user: current_user).order('created_at DESC').all.map { |item| meta(item) }
   end
 
   def meta(item)
@@ -30,6 +30,13 @@ class ItemsController < ApplicationController
       redirect_to items_url
     else
       raise
+    end
+  end
+
+  def destroy
+    @item.destroy
+    respond_to do |format|
+      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
     end
   end
 
@@ -70,10 +77,4 @@ class ItemsController < ApplicationController
   #   end
   # end
 
-  # def destroy
-  #   @item.destroy
-  #   respond_to do |format|
-  #     format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
-  #   end
-  # end
 end
