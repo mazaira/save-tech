@@ -38,6 +38,11 @@ body {
   background-color: #dbdbdb;
 }
 
+a, a:hover {
+  text-decoration: none;
+  color: black;
+}
+
 .col-md-3, .col-md-4 {
   padding: 0;
 }
