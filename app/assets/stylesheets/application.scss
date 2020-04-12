@@ -21,15 +21,21 @@
 }
 
 .tag-container {
-  height: 480px;
-  max-width: 300px;
+  height: 30rem;
+  max-width: 18.75rem;
   display: flex;
   border-color: black;
-  border-radius: 25px;
-  border-width: 3px;
+  border-radius: 1.56rem;
+  border-width: 0.2rem;
+
+  .list-group-item {
+    border: 0;
+    height: 2.6rem;
+    padding: 0;
+  }
 }
 
-.tag {
+.fixed-tag {
   position: absolute;
 }
 
@@ -44,23 +50,25 @@
   margin-bottom: 5px;
 }
 
-.row {
-  margin: 0;
-  flex: auto;
-}
+header {
+  .row {
+    margin: 0;
+    flex: auto;
+  }
 
-.col-centered {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .col-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.session-buttons {
-  float: right;
-}
+  .session-buttons {
+    float: right;
+  }
 
-.navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

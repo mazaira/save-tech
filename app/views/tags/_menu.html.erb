@@ -2,20 +2,26 @@
   <button type="button" class="btn btn-light pending-to-filter">Pending to filter</button>
 </div>
 
-<div class="card tag-container">
+<div class="tag-container">
+  <ul class='list-group'>
     <% tags&.each do |tag| %>
-    <%= link_to tag.name, filter_items_path(name: tag.name), class: 'tag btn', remote: true %>
+    <li class='list-group-item d-flex'>
+      <%= link_to tag.name, filter_items_path(name: tag.name), class: 'fixed-tag btn', remote: true %>
+      <%# <span class="badge badge-primary badge-pill">10</span> %>
+    </li>
     <% end %>
+  </ul>
 </div>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.4/randomColor.min.js'></script>
+
 <script>
-  var longestTag = Math.max.apply(null, $(".tag").map(function () { return $(this).outerWidth(); }).get());
-  var tagHeight = $('.tag').outerHeight();
-  $('.tag').each(function() {
+  //note, on screen resize fixed buttons won't readjust. It properly distributes on reload, but obviously they don't compact
+  var longestTag = Math.max.apply(null, $(".fixed-tag").map(function () { return $(this).outerWidth(); }).get());
+  var tagHeight = $('.fixed-tag').outerHeight();
+  $('.fixed-tag').each(function() {
     $(this).css({
       left : Math.random() * ($('.tag-container').width() - longestTag),
-      top: Math.random() * ($('.tag-container').height() - tagHeight),
       "background-color": randomColor(),
       "mix-blend-mode": 'exclusion',
     });

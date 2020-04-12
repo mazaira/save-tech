@@ -1,9 +1,9 @@
 <div class="container-fluid">
   <div class='row' >
-    <div class='col-3'>
+    <div class='col-2'>
       <%= render partial: "tags/menu", locals: { tags: current_user&.owned_tags } %>
     </div>
-    <div class='col-lg' id='grid'>
+    <div class='col-10' id='grid'>
       <%= render partial: "grid", locals: { items: @items } %>
     </div>
   </div>
