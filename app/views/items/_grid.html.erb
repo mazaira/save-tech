@@ -7,14 +7,14 @@
             <img class="card-img-top" alt ='' src="<%= item.meta.try(:[],'image') || image_url('default.jpg') %>" >
           </a>
 
-          <a class="h6 card-title" href=<%= item.object.link %>> <%= item.meta['title']&.first(60) || item.object.link %> </a>
+          <a class="h6 card-title" href=<%= item.object.link %>> <%= item.meta.try(:[], 'title')&.first(60) || item.object.link %> </a>
 
           <%= link_to 'x', item.object, method: :delete, class: 'delete-link', data: { confirm: 'Are you sure that you want to delete the tool?'} %>
         </div>
 
         <div class="card-body">
           <a class='card-text item-description' href=<%= item.object.link %>>
-            <%= item.meta['description']&.first(70).try(:+, '...') %>
+            <%= item.meta.try(:[], 'description')&.first(70).try(:+, '...') %>
           </a>
           <div class="d-flex tag-box">
             <% item.object.tags.pluck(:name).map do |tag| %>
