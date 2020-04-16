@@ -14,3 +14,11 @@ user2 = FactoryBot.create :user
     user.tag(item, with: tag, on: :tags)
   end
 end
+
+# You need to have an application in order to provide Oauth2.
+
+Doorkeeper::Application.create(
+  name: "foobar",
+  redirect_uri: "http://localhost:3000",
+  scopes: ["read", "write"]
+)
