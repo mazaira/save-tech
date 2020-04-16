@@ -93,6 +93,8 @@ GEM
       warden (~> 1.2.3)
     doorkeeper (5.3.1)
       railties (>= 5)
+    doorkeeper-jwt (0.4.0)
+      jwt (~> 2.1)
     dotenv (2.7.5)
     dotenv-rails (2.7.5)
       dotenv (= 2.7.5)
@@ -283,6 +285,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise
   doorkeeper
+  doorkeeper-jwt
   dotenv-rails
   factory_bot_rails
   faker
