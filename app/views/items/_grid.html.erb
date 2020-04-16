@@ -3,26 +3,26 @@
     <div class="col-md-4">
       <div class="card mb-4 box-shadow card-item">
         <div class ='d-flex'>
-          <a href=<%= item.object.link %>>
-            <img class="card-img-top" alt ='' src="<%= item.meta.try(:[],'image') || image_url('default.jpg') %>" >
+          <a href=<%= item.link %>>
+            <img class="card-img-top" alt ='' src="<%= item.image || image_url('default.jpg') %>" >
           </a>
 
-          <a class="h6 card-title" href=<%= item.object.link %>> <%= item.meta.try(:[], 'title')&.first(60) || item.object.link %> </a>
+          <a class="h6 card-title" href=<%= item.link %>> <%= item.title || item.link %> </a>
 
-          <%= link_to 'x', item.object, method: :delete, class: 'delete-link', data: { confirm: 'Are you sure that you want to delete the tool?'} %>
+          <%= link_to 'x', item, method: :delete, class: 'delete-link', data: { confirm: 'Are you sure that you want to delete the tool?'} %>
         </div>
 
         <div class="card-body">
-          <a class='card-text item-description' href=<%= item.object.link %>>
-            <%= item.meta.try(:[], 'description')&.first(70).try(:+, '...') %>
+          <a class='card-text item-description' href=<%= item.link %>>
+            <%= item.description.try(:+, '...') %>
           </a>
           <div class="d-flex tag-box">
-            <% item.object.tags.pluck(:name).map do |tag| %>
+            <% item.tags.pluck(:name).map do |tag| %>
               <%= link_to tag, filter_items_path(name: tag), class: 'btn btn-sm btn-outline-info btn--card', remote: true %>
             <% end %>
           </div>
           <div class='timestamp'>
-            <small class="text-muted"><%= "#{time_ago_in_words(item.object.created_at).gsub('about','')} ago" %></small>
+            <small class="text-muted"><%= "#{time_ago_in_words(item.created_at).gsub('about','')} ago" %></small>
           </div>
         </div>
       </div>

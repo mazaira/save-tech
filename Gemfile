@@ -22,7 +22,8 @@ gem 'omniauth-keycloak'
 gem 'pg'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'simple_form'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+gem 'jwt'
 
 
 

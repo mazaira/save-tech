@@ -8,6 +8,14 @@ class ItemService
     @item = Item.new(link: @params[:link], user: @user)
     @user.tag(@item, with: @params[:tag_list], on: :tags)
 
+    meta = @item.meta
+
+    @item.update_attributes(
+      description: meta['description'],
+      image:       meta['image'],
+      title:       meta['title'],
+    )
+
     @item
   end
 end
