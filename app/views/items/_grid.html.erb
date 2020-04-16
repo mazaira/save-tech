@@ -1,32 +1,7 @@
 <div class="card-deck">
-  <% items.each do |item| %>
+  <% @items.each do |item| %>
     <div class="col-md-4">
-      <div class="card mb-4 box-shadow card-item">
-        <div class ='d-flex'>
-          <a href=<%= item.link %>>
-            <img class="card-img-top" alt ='' src="<%= item.image || image_url('default.jpg') %>" >
-          </a>
-
-          <a class="h6 card-title" href=<%= item.link %>> <%= item.title || item.link %> </a>
-
-          <%= link_to 'x', item, method: :delete, class: 'delete-link', data: { confirm: 'Are you sure that you want to delete the tool?'} %>
-        </div>
-
-        <div class="card-body">
-          <a class='card-text item-description' href=<%= item.link %>>
-            <%= item.description.try(:+, '...') %>
-          </a>
-          <div class="d-flex tag-box">
-            <% item.tags.pluck(:name).map do |tag| %>
-              <%= link_to tag, filter_items_path(name: tag), class: 'btn btn-sm btn-outline-info btn--card', remote: true %>
-            <% end %>
-          </div>
-          <div class='timestamp'>
-            <small class="text-muted"><%= "#{time_ago_in_words(item.created_at).gsub('about','')} ago" %></small>
-          </div>
-        </div>
-      </div>
+      <%= render partial: "card", locals: {item: item} %>
     </div>
-
   <% end %>
 </div>
