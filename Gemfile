@@ -11,7 +11,7 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
-# Custom
+### Custom
 gem 'dotenv-rails'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
@@ -24,8 +24,9 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'jwt'
+gem 'doorkeeper'
 
-
+###
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
