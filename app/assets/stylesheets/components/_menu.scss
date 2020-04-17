@@ -1,0 +1,23 @@
+.tag-container {
+  margin-top: 1rem;
+  height: 30rem;
+  max-width: 18.75rem;
+  display: flex;
+  border-color: black;
+  border-radius: 1.56rem;
+  border-width: 0.2rem;
+
+  .list-group {
+    margin-top: 0.5rem;
+  }
+
+  .list-group-item {
+    border: 0;
+    height: 2.9rem;
+    padding: 0;
+  }
+
+  .fixed-tag {
+    position: absolute;
+  }
+}

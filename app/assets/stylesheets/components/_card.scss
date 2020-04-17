@@ -1,0 +1,60 @@
+.card {
+  .card-img-top {
+    padding:1rem;
+    width : 5rem;
+    height: 5rem;
+  }
+  .card-title {
+    padding: 1rem;
+    padding-left: 0.2rem;
+    overflow: hidden;
+    max-height: 5.7rem;
+  }
+  .card-body {
+    padding-top: 0.2rem;
+  }
+
+  .item-description {
+    height: 3rem;
+    display: flex;
+  }
+
+  .tag-box {
+    height: 2rem;
+    margin-top: 0.6rem;
+  }
+
+  .timestamp {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.4rem 0.4rem rgba(0,0,0, 0.2);
+
+    &::after {
+    transform: scale(1.5);
+    opacity: 0
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 0.4rem rgba(0,0,0, 0.2);
+  }
+}
+
+.card-item{
+    margin-right: 0.5rem !important;
+}
+
+.delete-link {
+  position: absolute;
+  right: 3%;
+  top: 1%;
+  color: grey;
+  font-size: 1.3rem;
+  opacity: 40%;
+}

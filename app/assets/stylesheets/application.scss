@@ -1,45 +1,13 @@
 @import "bootstrap";
 @import "font-awesome";
 
-$primary-color: #fafafa;
+@import "./variables";
+@import "./components/button";
+@import "./components/card";
+@import "./components/menu";
+@import "./components/pending-to-filter";
 
-header {
-  .row {
-    margin: 0;
-    flex: auto;
-  }
-
-  .col-centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .col-session{
-    padding-right: 0;
-
-    .session-buttons {
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
-
-      .btn {
-        border-width: 0;
-      }
-    }
-  }
-  .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $primary-color;
-  }
-
-  .navbar-button {
-    margin-left: ($spacer * .5);
-    margin-right: ($spacer * .5);
-  }
-}
+@import "./layout/header";
 
 body {
   // background-color: #dbdbdb;
@@ -55,121 +23,13 @@ a, a:hover {
   padding: 0;
 }
 
-.tag-container {
-  margin-top: 1rem;
-  height: 30rem;
-  max-width: 18.75rem;
-  display: flex;
-  border-color: black;
-  border-radius: 1.56rem;
-  border-width: 0.2rem;
-
-  .list-group {
-    margin-top: 0.5rem;
-  }
-
-  .list-group-item {
-    border: 0;
-    height: 2.9rem;
-    padding: 0;
-  }
-
-  .fixed-tag {
-    position: absolute;
-  }
-}
-
 .container-fluid {
   margin-top: ($spacer);
-}
-
-.pending-to-filter {
-  box-sizing: border-box;
-  width: 100%;
-  border-radius: 15px;
-  margin-bottom: 5px;
-  padding-left: 0.2rem;
-  text-align: center;
-
-  .fa-inbox{
-    font-size: 1.5rem;
-  }
 }
 
 #grid {
   margin-top: 1rem;
   margin-right: 1rem;
-}
-
-.btn {
-  &--themed {
-    background-color: #f0a500,
-  }
-
-  &--card {
-    margin-right: 0.3rem;
-  }
-}
-
-.card-item{
-    margin-right: 0.5rem !important;
-}
-
-.card {
-  .card-img-top {
-    padding:1rem;
-    width : 5rem;
-    height: 5rem;
-  }
-  .card-title {
-    padding: 1rem;
-    padding-left: 0.2rem;
-    overflow: hidden;
-    max-height: 5.7rem;
-  }
-  .card-body {
-    padding-top: 0.2rem;
-  }
-
-  .item-description {
-    height: 3rem;
-    display: flex;
-  }
-
-  .tag-box {
-    height: 2rem;
-    margin-top: 0.6rem;
-  }
-
-  .timestamp {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-  }
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0.4rem 0.4rem rgba(0,0,0, 0.2);
-
-    &::after {
-    transform: scale(1.5);
-    opacity: 0
-    }
-  }
-
-  &:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 0.4rem rgba(0,0,0, 0.2);
-  }
-}
-
-.delete-link {
-  position: absolute;
-  right: 3%;
-  top: 1%;
-  color: grey;
-  font-size: 1.3rem;
-  opacity: 40%;
 }
 
 .active-tags-placeholder {
