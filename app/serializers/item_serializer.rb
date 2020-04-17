@@ -1,6 +1,4 @@
-class ItemSerializer
-    include JSONAPI::Serializer
-
+class ItemSerializer < BaseSerializer
     attribute :id
     attribute :link
     attribute :description
