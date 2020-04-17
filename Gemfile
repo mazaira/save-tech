@@ -26,6 +26,7 @@ gem 'font-awesome-rails'
 gem 'jwt'
 gem 'doorkeeper'
 gem 'doorkeeper-jwt'
+gem 'jsonapi-serializers'
 
 ###
 

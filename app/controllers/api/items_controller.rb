@@ -4,16 +4,21 @@ class Api::ItemsController < ApplicationController
 
 
   def create
-    @item = ::ItemService.new(item_params, current_user)
-    if @item.create
-      render json: @item
+    item = ::ItemService.new(item_params, current_user).create
+    if item
+      render json: JSONAPI::Serializer.serialize(item)
     else
       render json: { error: '422, something went wrong' }
     end
   end
 
   def show
-    render json: @item
+    render json:  JSONAPI::Serializer.serialize(@item)
+  end
+
+  def update
+    current_user.tag(@item, with: item_params[:tags], on: :tags)
+    render json:  JSONAPI::Serializer.serialize(@item)
   end
 
   private
@@ -23,7 +28,7 @@ class Api::ItemsController < ApplicationController
 
     # TODO: remove user_id as soon as we have auth
     def item_params
-      params.require(:item).permit(:link, :user_id, tag_list: [])
+      params.require(:data).require(:attributes).permit(:link, :user_id, tags: [])
     end
 
     def current_user
@@ -32,7 +37,7 @@ class Api::ItemsController < ApplicationController
 
     # TODO: implement key/secret verification
     def token
-      @token ||= decode(bearer_token(request.headers['AUTHORIZATION'])).first
+      @token ||= decode(bearer_token(request.headers['AUTHORIZATION'])).first['user']
     end
 
     def decode(token)

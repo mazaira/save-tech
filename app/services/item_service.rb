@@ -6,7 +6,7 @@ class ItemService
 
   def create
     @item = Item.new(link: @params[:link], user: @user)
-    @user.tag(@item, with: @params[:tag_list], on: :tags)
+    @user.tag(@item, with: @params[:tags], on: :tags)
 
     meta = @item.meta
 
