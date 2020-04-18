@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   use_doorkeeper
   devise_for :users
 
-  root to: 'items#index'
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
 
   # Web
 
