@@ -29,14 +29,14 @@ class ItemsController < ApplicationController
   end
 
   def from_tag
-    @selected = Item.tagged_with( params[:name], on: :tags, owned_by: current_user).map { |item| meta(item) }
+    @items = Item.tagged_with( params[:name], on: :tags, owned_by: current_user)
     @active_tags = params[:name]
 
     respond_to { |format| format.js }
   end
 
   def pending_to_filter
-    @selected = (Item.where(user: current_user) - Item.joins(:taggings).where(user: current_user).uniq).map { |item| meta(item) }
+    @items = (Item.where(user: current_user) - Item.joins(:taggings).where(user: current_user).uniq)
 
     respond_to { |format| format.js }
   end
