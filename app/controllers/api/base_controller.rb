@@ -1,10 +1,17 @@
 class Api::BaseController < ApplicationController
+  before_action :check_auth
+
+  respond_to :json
 
   private
 
-  def current_user
-    User.find_by_email token['email'] if request.headers['AUTHORIZATION']
+  def check_auth
+    render json: { error: 'Unauthorized'}, status: 401 unless user_signed_in?
   end
+
+  # def current_user
+  #   User.find_by_email token['email'] if request.headers['AUTHORIZATION']
+  # end
 
   # TODO: implement key/secret verification
   def token
