@@ -1,0 +1,25 @@
+.edit-box {
+  padding: 3rem;
+  // background-color: grey;
+  border-radius: 1.5rem;
+
+  .edit_user {
+    max-width: 25rem;
+  }
+
+  .cancel-account, .back {
+    margin-top: 3rem;
+    max-width: 25rem;
+    text-align: center;
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  label {
+    display: flex;
+  }
+}
+
