@@ -6,6 +6,7 @@ namespace :meta do
         resp = Faraday.get(ENV['META_URL'], {url: item.link}, {'Authorization' => ENV['META_KEY']})
         meta = JSON.parse(resp.body)['meta']
 
+        next unless meta
         item.update_attributes(
           description: meta['description'],
           image:       meta['image'],

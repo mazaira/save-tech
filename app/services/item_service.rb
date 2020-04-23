@@ -10,6 +10,7 @@ class ItemService
     @user.tag(@item, with: @tags, on: :tags)
 
     meta = @item.meta
+    return unless meta
 
     @item.update_attributes(
       description: meta['description'],
