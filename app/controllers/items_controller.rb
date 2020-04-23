@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = ::ItemService.new(item_params, current_user)
+    @item = ::ItemService.new(item_params[:link], item_params[:tag_list], current_user)
 
     if @item.create
       redirect_to items_url

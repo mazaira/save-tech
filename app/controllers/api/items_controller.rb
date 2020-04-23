@@ -4,7 +4,7 @@ class Api::ItemsController < Api::BaseController
 
 
   def create
-    item = ::ItemService.new(item_params, current_user).create
+    item = ::ItemService.new(item_params[:link], item_params[:tags], current_user).create
     if item
       render json: JSONAPI::Serializer.serialize(item)
     else
@@ -29,6 +29,6 @@ class Api::ItemsController < Api::BaseController
 
   # TODO: remove user_id as soon as we have auth
   def item_params
-    params.require(:data).require(:attributes).permit(:link, :user_id, tags: [])
+    params.require(:data).require(:attributes).permit(:link, tags: [])
   end
 end

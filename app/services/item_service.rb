@@ -1,12 +1,13 @@
 class ItemService
-  def initialize(params, user)
-    @params = params
+  def initialize(link, tags, user)
+    @link = link
+    @tags = tags
     @user = user
   end
 
   def create
-    @item = Item.new(link: @params[:link], user: @user)
-    @user.tag(@item, with: @params[:tags], on: :tags)
+    @item = Item.new(link: @link, user: @user)
+    @user.tag(@item, with: @tags, on: :tags)
 
     meta = @item.meta
 
