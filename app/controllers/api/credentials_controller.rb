@@ -1,4 +1,4 @@
-class Api::CredentialsController < ApplicationController
+class Api::CredentialsController < Api::BaseController
   before_action :doorkeeper_authorize!
 
   def me
