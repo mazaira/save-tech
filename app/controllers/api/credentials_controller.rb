@@ -1,13 +1,7 @@
 class Api::CredentialsController < Api::BaseController
-  before_action :doorkeeper_authorize!
-
   def me
-    respond_with current_resource_owner
+    respond_with current_user
   end
 
   private
-
-  def current_resource_owner
-    User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token
-  end
 end

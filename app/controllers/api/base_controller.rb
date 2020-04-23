@@ -9,9 +9,9 @@ class Api::BaseController < ApplicationController
     render json: { error: 'Unauthorized'}, status: 401 unless user_signed_in?
   end
 
-  # def current_user
-  #   User.find_by_email token['email'] if request.headers['AUTHORIZATION']
-  # end
+  def current_user
+    request.headers['AUTHORIZATION'].present? ? User.find_by_email(token['email']) : super
+  end
 
   # TODO: implement key/secret verification
   def token
