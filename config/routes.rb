@@ -21,9 +21,12 @@ Rails.application.routes.draw do
   # API
 
   namespace :api do
-    get 'most_used_tags' => 'tags#most_used'
-    resources :items
     get 'credentials/me', to: 'credentials#me'
+
+    resources :items
+    resources :tags
+    get 'most_used_tags' => 'tags#most_used'
+
 
   end
 end
