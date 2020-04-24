@@ -2,7 +2,9 @@
   <nav class="navbar navbar-light">
     <div class='row'>
       <div class='col-sm'>
-        <%= link_to fa_icon("plus-square", text: 'New item').html_safe, new_item_path, class: 'navbar-brand'%>
+        <% if user_signed_in? %>
+          <%= link_to fa_icon("plus-square", text: 'New item').html_safe, new_item_path, class: 'navbar-brand'%>
+        <% end %>
       </div>
 
       <div class='col-sm col-centered'>
