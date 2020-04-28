@@ -1,0 +1,9 @@
+<div class = 'col-md-8 offset-2'>
+  <h1 class = "text-center">Edit Item</h1>
+  <%= simple_form_for @item, url: item_path do |f| %>
+    <%= f.input :link %>
+    <%= f.input :tag_list, placeholder: 'Comma separated list of tags...' %>
+
+    <%= f.submit "Next", class: 'btn btn-lg btn-primary float-right' %>
+  <% end %>
+</div>

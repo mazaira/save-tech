@@ -2,7 +2,6 @@ class Api::ItemsController < Api::BaseController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
 
-
   def create
     item = ::ItemService.new(item_params[:link], item_params[:tags], current_user).create
     if item
@@ -13,12 +12,12 @@ class Api::ItemsController < Api::BaseController
   end
 
   def show
-    render json:  JSONAPI::Serializer.serialize(@item)
+    render json: JSONAPI::Serializer.serialize(@item)
   end
 
   def update
     current_user.tag(@item, with: item_params[:tags], on: :tags)
-    render json:  JSONAPI::Serializer.serialize(@item)
+    render json: JSONAPI::Serializer.serialize(@item)
   end
 
   private

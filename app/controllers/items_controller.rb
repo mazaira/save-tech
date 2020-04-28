@@ -12,12 +12,26 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = ::ItemService.new(item_params[:link], item_params[:tag_list], current_user)
+    @item = init_service
 
     if @item.create
       redirect_to items_url
     else
       raise
+    end
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    respond_to do |format|
+      if init_service.update(@item)
+        format.html { redirect_to items_url, notice: 'Item was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
     end
   end
 
@@ -50,15 +64,7 @@ class ItemsController < ApplicationController
       params.require(:item).permit(:link, :user_id, :tag_list)
     end
 
-  ## Scaffold but not supported yet
-  # def update
-  #   respond_to do |format|
-  #     if @item.update(item_params)
-  #       format.html { redirect_to @item, notice: 'Item was successfully updated.' }
-  #     else
-  #       format.html { render :edit }
-  #     end
-  #   end
-  # end
-
+    def init_service
+      ::ItemService.new(item_params[:link], item_params[:tag_list], current_user)
+    end
 end

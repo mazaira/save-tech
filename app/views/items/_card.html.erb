@@ -8,7 +8,15 @@
       <%= item.title&.first(60) || item.link %>
     </a>
 
-    <%= link_to 'x', item, method: :delete, class: 'delete-link', data: { confirm: 'Are you sure that you want to delete the tool?'} %>
+    <div class="dropdown action-box">
+      <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        ...
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to feather("edit", 'Edit'), edit_item_path(item), class: 'dropdown-item'%>
+        <%= link_to feather("trash", 'Delete'), item, method: :delete, class: 'dropdown-item', data: { confirm: 'Are you sure that you want to delete the tool?'} %>
+      </div>
+    </div>
   </div>
 
   <div class="card-body">

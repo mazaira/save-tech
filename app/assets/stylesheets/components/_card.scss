@@ -48,17 +48,18 @@
 
 .card-item{
     margin-right: 0.5rem !important;
+    .dropdown-menu {
+      min-width: 8rem;
+    }
+    .dropdown-item {
+      padding-left: 1rem;
+    }
 }
 
 .card-deck .card {
   transition: box-shadow 200ms ease;
 }
 
-.delete-link {
-  position: absolute;
-  right: 3%;
-  top: 1%;
-  color: grey;
-  font-size: 1.3rem;
-  opacity: 40%;
+.action-box {
+  margin-left: auto;
 }

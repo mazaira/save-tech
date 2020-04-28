@@ -20,4 +20,9 @@ class ItemService
 
     @item
   end
+
+  def update(item)
+    item.update_attributes(link: @link)
+    @user.tag(item, with: @tags, on: :tags)
+  end
 end
