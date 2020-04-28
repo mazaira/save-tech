@@ -4,7 +4,7 @@
       <img class="card-img-top" alt ='' src="<%= item.image || image_url('default.jpg') %>" >
     </a>
 
-    <a class="h6 card-title" href=<%= item.link %>>
+    <a class="h6 card-title" href="<%= item.link %>">
       <%= item.title&.first(60) || item.link %>
     </a>
 
@@ -20,7 +20,7 @@
   </div>
 
   <div class="card-body">
-    <a class='card-text item-description' href=<%= item.link %>>
+    <a class='card-text item-description' href="<%= item.link %>">
       <%= item.description&.first(70)&.try(:+, '...') %>
     </a>
     <div class="d-flex tag-box">
