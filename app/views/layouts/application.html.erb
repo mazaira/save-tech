@@ -7,14 +7,16 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%# TODO: use yarn package%>
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
 
   <body>
     <%= render partial: "layouts/header" %>
 
-
     <%= yield %>
 
-  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script> feather.replace() </script>
   </body>
 </html>
