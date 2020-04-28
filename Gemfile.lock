@@ -102,8 +102,6 @@ GEM
     faraday (0.17.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.12.2)
-    font-awesome-rails (4.7.0.5)
-      railties (>= 3.2, < 6.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.2)
@@ -254,7 +252,6 @@ DEPENDENCIES
   factory_bot_rails
   faker
   faraday
-  font-awesome-rails
   jbuilder (~> 2.7)
   jsonapi-serializers
   jwt
