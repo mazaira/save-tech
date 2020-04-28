@@ -13,8 +13,6 @@ gem 'jbuilder', '~> 2.7'
 
 ### Custom
 gem 'dotenv-rails'
-gem 'bootstrap', '~> 4.3.1'
-gem 'jquery-rails'
 gem 'faraday'
 gem 'rack-cors'
 gem 'devise'
