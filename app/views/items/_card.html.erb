@@ -5,7 +5,7 @@
     </a>
 
     <a class="h6 card-title" href="<%= item.link %>">
-      <%= item.title&.first(60) || item.link %>
+      <%= item.title || item.link %>
     </a>
 
     <div class="dropdown action-box">
@@ -21,7 +21,7 @@
 
   <div class="card-body">
     <a class='card-text item-description' href="<%= item.link %>">
-      <%= item.description&.first(70)&.try(:+, '...') %>
+      <%= item.description %>
     </a>
     <div class="d-flex tag-box">
       <% item.tags.pluck(:name).map do |tag| %>
