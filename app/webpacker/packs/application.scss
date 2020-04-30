@@ -1,7 +1,6 @@
 @import "../src/stylesheets/variables";
 @import "~bootstrap/scss/bootstrap";
 
-@import "../src/stylesheets/session";
 @import "../src/stylesheets/components/button";
 @import "../src/stylesheets/components/card";
 @import "../src/stylesheets/components/icon";
@@ -9,6 +8,7 @@
 @import "../src/stylesheets/components/pending-to-filter";
 
 @import "../src/stylesheets/layout/header";
+@import "../src/stylesheets/layout/session";
 
 body {
   background-color: $bg-color;
