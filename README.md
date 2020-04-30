@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Notes on configuration
 
-Things you may want to cover:
+Copy the configurations from `.env.example`
 
-* Ruby version
+## Optionally the project can be started via foreman
+```
+gem install foreman
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+foreman start
+```
