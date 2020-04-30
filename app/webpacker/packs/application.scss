@@ -1,0 +1,41 @@
+@import "../src/stylesheets/variables";
+@import "~bootstrap/scss/bootstrap";
+
+@import "../src/stylesheets/components/button";
+@import "../src/stylesheets/components/card";
+@import "../src/stylesheets/components/icon";
+@import "../src/stylesheets/components/menu";
+@import "../src/stylesheets/components/pending-to-filter";
+@import "../src/stylesheets/components/sign-box";
+@import "../src/stylesheets/components/edit-box";
+
+@import "../src/stylesheets/layout/header";
+
+body {
+  // background-color: #dbdbdb;
+  background-color: $primary-color;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.col-md-3,
+.col-md-4 {
+  padding: 0;
+}
+
+.container-fluid {
+  margin-top: ($spacer);
+}
+
+#grid {
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+.active-tags-placeholder {
+  height: 38px;
+}

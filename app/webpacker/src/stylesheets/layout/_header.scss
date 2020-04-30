@@ -10,7 +10,7 @@ header {
     align-items: center;
   }
 
-  .col-session{
+  .col-session {
     padding-right: 0;
 
     .session-buttons {
@@ -31,7 +31,7 @@ header {
   }
 
   .navbar-button {
-    margin-left: ($spacer * .5);
-    margin-right: ($spacer * .5);
+    margin-left: ($spacer * 0.5);
+    margin-right: ($spacer * 0.5);
   }
 }
