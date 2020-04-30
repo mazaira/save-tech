@@ -1,15 +1,15 @@
 <header>
   <nav class="navbar navbar-light">
     <div class='row'>
-      <div class='col-sm'>
-        <% if user_signed_in? %>
-          <%= link_to feather('plus-square', 'New item'), new_item_path, class: 'navbar-brand'%>
-        <% end %>
-      </div>
+      <% if user_signed_in? %>
+        <div class='col-sm'>
+            <%= link_to feather('plus-square', 'New item'), new_item_path, class: 'navbar-brand'%>
+        </div>
 
-      <div class='col-sm col-centered'>
-        <%= link_to feather('save', 'Save Tech', 'right'), items_path, class: 'navbar-brand' %>
-      </div>
+        <div class='col-sm col-centered'>
+          <%= link_to feather('save', 'Save Tech', 'right'), items_path, class: 'navbar-brand' %>
+        </div>
+      <% end %>
 
       <div class='col-sm col-session'>
         <div class='session-buttons'>

@@ -1,4 +1,6 @@
 @import "../src/stylesheets/variables";
+@import "../src/stylesheets/fonts";
+
 @import "~bootstrap/scss/bootstrap";
 
 @import "../src/stylesheets/components/button";
@@ -8,6 +10,7 @@
 @import "../src/stylesheets/components/pending-to-filter";
 
 @import "../src/stylesheets/layout/header";
+@import "../src/stylesheets/layout/landing";
 @import "../src/stylesheets/layout/session";
 
 body {

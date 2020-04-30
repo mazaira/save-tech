@@ -1,0 +1,32 @@
+.landing {
+  .main-text, .heading {
+    text-align: center;
+  }
+
+  h1 {
+    font-family: 'Nunito Black';
+    font-weight: 900;
+    font-size: 52px;
+  }
+
+  h2 {
+    font-family: 'Space Mono';
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: $dark-transparent;
+  }
+
+  .next-features{
+    .col {
+      text-align: center;
+    }
+    .features-title {
+      font-weight: 700;
+      font-size: 3.25rem;
+    }
+    .features-content {
+      font-weight: 400;
+      font-size: 1.25rem;
+    }
+  }
+}
