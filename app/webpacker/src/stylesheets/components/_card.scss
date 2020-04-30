@@ -13,12 +13,14 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: black;
   }
   .card-body {
     padding-top: 0.2rem;
   }
 
   .item-description {
+    color: black;
     display: -webkit-box;
     max-width: 100%;
     -webkit-line-clamp: 2;
