@@ -5,16 +5,27 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164822440-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-164822440-1');
+    </script>
+
+
+    <%# TODO: use yarn package%>
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
 
-  <body class="session-layout d-flex flex-direction-column justify-content-between">
+  <body>
     <%= yield %>
 
-    <footer>
-      &copy; 2020 SaveTech
-    </footer>
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script> feather.replace() </script>
   </body>
 </html>
