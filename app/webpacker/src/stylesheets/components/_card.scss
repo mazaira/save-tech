@@ -1,7 +1,7 @@
 .card {
   .card-img-top {
-    padding:1rem;
-    width : 5rem;
+    padding: 1rem;
+    width: 5rem;
     height: 5rem;
   }
   .card-title {
@@ -43,32 +43,32 @@
 
   &:hover {
     transform: translateY(-1px);
-    box-shadow: 0 0.3rem 0.7rem rgba(0,0,0, 0.1);
+    box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.1);
 
     &::after {
-    transform: scale(1.5);
-    opacity: 0
+      transform: scale(1.5);
+      opacity: 0;
     }
   }
 
   &:active {
     transform: translateY(-1px);
-    box-shadow: 0 5px 0.4rem rgba(0,0,0, 0.2);
+    box-shadow: 0 5px 0.4rem rgba(0, 0, 0, 0.2);
   }
 }
 
-.card-item{
-    margin-right: 0.5rem !important;
-    .dropdown-menu {
-      min-width: 8rem;
-    }
-    .dropdown-item {
-      padding-left: 1rem;
-    }
+.card-item {
+  margin-right: 0.5rem !important;
+  .dropdown-menu {
+    min-width: 8rem;
+  }
+  .dropdown-item {
+    padding-left: 1rem;
+  }
 
-    svg {
-      width: 1rem;
-    }
+  svg {
+    width: 1rem;
+  }
 }
 
 .card-deck .card {

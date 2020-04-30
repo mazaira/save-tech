@@ -1,25 +1,22 @@
 @import "../src/stylesheets/variables";
 @import "~bootstrap/scss/bootstrap";
 
+@import "../src/stylesheets/session";
 @import "../src/stylesheets/components/button";
 @import "../src/stylesheets/components/card";
 @import "../src/stylesheets/components/icon";
 @import "../src/stylesheets/components/menu";
 @import "../src/stylesheets/components/pending-to-filter";
-@import "../src/stylesheets/components/sign-box";
-@import "../src/stylesheets/components/edit-box";
 
 @import "../src/stylesheets/layout/header";
 
 body {
-  // background-color: #dbdbdb;
-  background-color: $primary-color;
+  background-color: $bg-color;
 }
 
 a,
 a:hover {
   text-decoration: none;
-  color: black;
 }
 
 .col-md-3,

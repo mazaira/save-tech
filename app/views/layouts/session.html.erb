@@ -23,8 +23,14 @@
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="session-layout d-flex flex-direction-row justify-content-center align-items-center">
+    <main>
+      <h1 class="logo">
+        <%= image_pack_tag 'media/images/save-tech.svg', alt: "save-tech-logo" %>
+      </h1>
+
+      <%= yield %>
+    </main>
 
     <script> feather.replace() </script>
   </body>
