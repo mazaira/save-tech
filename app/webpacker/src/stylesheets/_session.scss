@@ -1,0 +1,28 @@
+.session-layout {
+  height: 100vh;
+
+  .logo {
+    width: 200px;
+    margin-bottom: 2rem;
+  }
+
+  main {
+    width: 450px;
+    border: 1px solid #efefef;
+    padding: 3rem;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  .shared-links {
+    border-top: 1px solid #efefef;
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+}

@@ -1,7 +1,7 @@
 <div class="card mb-4 box-shadow card-item d-flex">
   <div class ='d-flex'>
     <a href=<%= item.link %>>
-      <img class="card-img-top" alt ='' src="<%= item.image || image_url('default.jpg') %>" >
+      <img class="card-img-top" alt ='' src="<%= item.image || asset_pack_path('media/images/default.jpg') %>" >
     </a>
 
     <a class="h6 card-title" href="<%= item.link %>">
