@@ -198,6 +198,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    sentry-raven (2.13.0)
+      faraday (>= 0.7.6, < 1.0)
     simple_form (5.0.1)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -268,6 +270,7 @@ DEPENDENCIES
   rails_real_favicon
   sass-rails (>= 6)
   selenium-webdriver
+  sentry-raven
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)

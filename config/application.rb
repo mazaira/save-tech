@@ -16,6 +16,12 @@ module SaveTech
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    Raven.configure do |config|
+      config.dsn = 'https://eb7b6141552f466483d17d8a55ef2ee8:7bf9afb90fca4b538d407931a7339273@o386489.ingest.sentry.io/5220851'
+    end
+
+    config.filter_parameters << :password
+
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'

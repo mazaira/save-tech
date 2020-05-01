@@ -23,6 +23,8 @@ gem 'jwt'
 gem 'doorkeeper'
 gem 'doorkeeper-jwt'
 gem 'jsonapi-serializers'
+gem "sentry-raven"
+
 
 ###
 
