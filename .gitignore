@@ -31,4 +31,6 @@ yarn-debug.log*
 .yarn-integrity
 
 .env
-docker/postgres-data/
+.DS_Store
+app/.DS_Store
+app/webpacker/.DS_Store
