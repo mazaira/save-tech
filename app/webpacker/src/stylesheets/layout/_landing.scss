@@ -1,7 +1,8 @@
 .landing {
-  .main-text, .heading {
+  .intro, .heading {
     text-align: center;
   }
+
 
   h1 {
     font-family: 'Nunito Black';
@@ -16,17 +17,41 @@
     color: $dark-transparent;
   }
 
+  .heading, .intro, .next-features, .how-it-works {
+    border-bottom: 2px solid;
+    border-color: $dark-transparent;
+  }
+
+  .intro, .next-features, .how-it-works {
+    padding-bottom: 3rem;
+    margin-top: 3rem;
+
+  }
+
+  .intro{
+    .intro-text {
+      margin-top: 2rem;
+    }
+    p {
+      font-family: 'Space Mono';
+    }
+
+  }
   .next-features{
     .col {
       text-align: center;
     }
     .features-title {
-      font-weight: 700;
       font-size: 3.25rem;
     }
     .features-content {
       font-weight: 400;
-      font-size: 1.25rem;
+      // font-size: 1.25rem;
+      font-family: 'Space Mono';
     }
+  }
+
+  .how-it-works {
+
   }
 }
