@@ -34,3 +34,5 @@ yarn-debug.log*
 .DS_Store
 app/.DS_Store
 app/webpacker/.DS_Store
+
+docker/postgres-data/
