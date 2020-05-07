@@ -9,7 +9,6 @@
 //
 
 require("@rails/ujs").start();
-require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
 
@@ -18,20 +17,24 @@ const imagePath = (name) => images(name, true);
 
 import "bootstrap/dist/js/bootstrap";
 
-// note, on screen resize fixed buttons won't readjust. It properly distributes on reload, but obviously they don't compact
-var longestTag = Math.max.apply(
-  null,
-  $(".fixed-tag")
-    .map(function () {
-      return $(this).outerWidth();
-    })
-    .get()
-);
-var tagHeight = $(".fixed-tag").outerHeight();
-$(".fixed-tag").each(function () {
-  $(this).css({
-    left: Math.random() * ($(".tag-container").width() - longestTag),
-    // "background-color": randomColor(),
-    // "mix-blend-mode": 'exclusion',
+// Adjust the tags alignment randomly.
+// Note: on screen resize fixed buttons won't readjust.
+// It properly distributes on reload, but obviously they don't compact.
+$(document).ready(() => {
+  let widths = [];
+
+  $(".fixed-tag").each(function () {
+    widths.push($(this).outerWidth());
+  });
+
+  const longestTag = Math.max(...widths);
+
+  const tagHeight = $(".fixed-tag").outerHeight();
+  $(".fixed-tag").each(function () {
+    $(this).css({
+      left: Math.random() * ($(".tag-container").width() - longestTag),
+      // "background-color": randomColor(),
+      // "mix-blend-mode": 'exclusion',
+    });
   });
 });
