@@ -11,10 +11,14 @@ class Item < ApplicationRecord
   end
 
   def add_tag(tags)
-    self.user.tag(self, with: tags, on: :tags)
+    user.tag(self, with: tags, on: :tags)
   end
 
   def tag_list
-    tags.join(", ")
+    tags.join(', ')
+  end
+
+  def self.with_tag(name, user)
+    Item.tagged_with( name, on: :tags, owned_by: user)
   end
 end

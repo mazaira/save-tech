@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
   end
 
   def from_tag
-    @items = Item.tagged_with( params[:name], on: :tags, owned_by: current_user)
+    @items = Item.with_tag( params[:name], current_user)
     @active_tags = params[:name]
 
     respond_to { |format| format.js }

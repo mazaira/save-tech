@@ -31,9 +31,11 @@ $(document).ready(() => {
 
   const tagHeight = $(".fixed-tag").outerHeight();
   $(".fixed-tag").each(function () {
+    // const color = randomColor();
     $(this).css({
       left: Math.random() * ($(".tag-container").width() - longestTag),
-      // "background-color": randomColor(),
+      // "color": color,
+      // "border-color": color
       // "mix-blend-mode": 'exclusion',
     });
   });
