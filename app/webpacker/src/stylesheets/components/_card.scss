@@ -44,7 +44,8 @@
   }
 
   &:hover {
-    transform: translateY(-1px);
+    // TODO: translateY eliminates the z-index of children. Needed to investigate more.
+    // transform: translateY(-1px);
     box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.1);
 
     &::after {
