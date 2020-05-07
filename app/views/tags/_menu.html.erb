@@ -17,16 +17,3 @@
 </div>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.4/randomColor.min.js'></script>
-
-<script>
-  //note, on screen resize fixed buttons won't readjust. It properly distributes on reload, but obviously they don't compact
-  var longestTag = Math.max.apply(null, $(".fixed-tag").map(function () { return $(this).outerWidth(); }).get());
-  var tagHeight = $('.fixed-tag').outerHeight();
-  $('.fixed-tag').each(function() {
-    $(this).css({
-      left : Math.random() * ($('.tag-container').width() - longestTag),
-      // "background-color": randomColor(),
-      // "mix-blend-mode": 'exclusion',
-    });
-  });
-</script>
