@@ -1,12 +1,8 @@
 <div class="card mb-4 box-shadow card-item d-flex">
   <div class ='d-flex'>
-    <a href=<%= item.link %>>
-      <img class="card-img-top" alt ='' src="<%= item.image || asset_pack_path('media/images/default.jpg') %>" >
-    </a>
+    <%= link_to image_tag(item.image || asset_pack_path('media/images/default.jpg'), class: 'card-img-top', alt: "Icon"), item.link, target: :_blank %>
 
-    <a class="h6 card-title" href="<%= item.link %>">
-      <%= item.title.present? ? item.title : item.link %>
-    </a>
+    <%= link_to item.title.present? ? item.title : item.link, item.link, class: 'h6 card-title', alt: "Title", target: :_blank %>
 
     <div class="dropdown action-box">
       <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -20,9 +16,7 @@
   </div>
 
   <div class="card-body">
-    <a class='card-text item-description' href="<%= item.link %>">
-      <%= item.description.present? ? item.description : item.link %>
-    </a>
+    <%= link_to item.description.present? ? item.description : item.link, item.link, class: 'card-text item-description', alt: "Description", target: :_blank %>
     <div class="d-flex tag-box">
       <% item.tags.pluck(:name).map do |tag| %>
         <%= link_to tag, filter_items_path(name: tag), class: 'btn btn-sm btn-outline-info btn--card', remote: true %>
