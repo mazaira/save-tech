@@ -1,8 +1,9 @@
-$primary: #84e3cc;
-$bg-color: #fafafa;
-$link-color: #84e3cc;
+// overrides bootstrap defaults for btn-primary
+$primary: rgba(68, 215, 182, 0.71);
+$link-color: rgba(68, 215, 182, 0.71);
 
-$primary-green: rgba(68, 215, 182, 1);
+$bg-color: #fafafa;
+
 $primary-pink: #f2b5d4;
 
 $dark-transparent: rgba(0,0,0,0.5);
