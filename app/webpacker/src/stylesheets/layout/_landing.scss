@@ -95,8 +95,16 @@
   }
 
   .next-features{
-    .col {
-      text-align: center;
+    position: relative;
+    text-align: center;
+    .coming-soon {
+      position: absolute;
+      right: -3%;
+      top: -7%;
+    }
+
+    .row {
+      margin-top: 2rem;
     }
     .features-title {
       font-size: 3.25rem;
