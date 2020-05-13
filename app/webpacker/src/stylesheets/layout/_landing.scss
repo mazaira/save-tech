@@ -25,7 +25,7 @@
     color: $dark-transparent;
   }
 
-  .heading, .intro, .next-features, .how-it-works {
+  .heading, .intro, .how-it-works {
     border-bottom: 2px solid;
     border-color: $dark-transparent;
   }
@@ -58,6 +58,17 @@
     }
   }
 
+  .intro {
+    height: 55vh;
+    h1 {
+      margin-top: 7rem;
+    }
+    .intro-text {
+      margin-top: 4rem;
+      font-size: 1.2rem;
+    }
+  }
+
   .intro, .next-features, .how-it-works {
     padding-bottom: 3rem;
     margin-top: 3rem;
@@ -67,6 +78,9 @@
   .how-it-works {
     ul {
       list-style-type: none;
+    }
+    .row {
+      margin-top: 3rem;
     }
   }
 
@@ -80,11 +94,6 @@
     }
   }
 
-  .intro{
-    .intro-text {
-      margin-top: 2rem;
-    }
-  }
   .next-features{
     .col {
       text-align: center;
