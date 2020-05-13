@@ -2,6 +2,7 @@
   <div class='row' >
     <div class='col-2'>
       <%= render partial: "tags/menu", locals: { tags: current_user&.owned_tags.order('taggings_count DESC') } %>
+      <%= render partial: "tags/menu", locals: { tags: current_user&.owned_tags.&order('taggings_count DESC') } %>
     </div>
     <div class='col-10'>
       <div class= 'col-md-3' id='active-tags'>
