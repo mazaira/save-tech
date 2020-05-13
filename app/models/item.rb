@@ -2,6 +2,9 @@ class Item < ApplicationRecord
   belongs_to :user
 
   has_many :taggings, class_name: 'ActsAsTaggableOn::Tagging', dependent: :destroy
+
+  validates :link, url: true
+
   acts_as_taggable
 
   def meta

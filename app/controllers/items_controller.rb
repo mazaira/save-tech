@@ -12,12 +12,11 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = init_service
-
-    if @item.create
+    @item = init_service.create
+    if @item.persisted?
       redirect_to items_url
     else
-      raise
+      render :new
     end
   end
 

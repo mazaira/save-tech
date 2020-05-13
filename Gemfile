@@ -24,7 +24,7 @@ gem 'doorkeeper'
 gem 'doorkeeper-jwt'
 gem 'jsonapi-serializers'
 gem "sentry-raven"
-
+gem "validate_url"
 
 ###
 
