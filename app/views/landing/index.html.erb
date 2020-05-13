@@ -1,8 +1,9 @@
 <div class='landing'>
   <div class='heading container'>
-    <h1> Bookmarking redefined</h1>
-    <h2> Save your content in a categorized way and acces it everywhere</h2>
-    <%= image_pack_tag 'media/images/save-tech.svg' %>
+    <h1 class='heading-title'> Bookmarking redefined</h1>
+    <h2 class='heading-subtitle'> Save your content in a categorized way and acces it everywhere</h2>
+      <%= image_pack_tag 'media/images/logo-alpha.png' %>
+      <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-outline-dark'%>
   </div>
 
   <div class='intro container'>
@@ -16,6 +17,27 @@
       <br /><br />
       SaveTech comes to the rescue, to aggregate all of that on a clean interface.
     </p>
+  </div>
+
+  <div class='how-it-works container'>
+    <h1> How it works </h1>
+    <div class='video'>
+      <video loop autoplay controls muted>
+        <source src="<%= asset_pack_path("media/images/save-tech.mp4") %>" type="video/mp4">
+      </video>
+    </div>
+    <div class='row'>
+      <div class='col'>
+        <ul>
+          <li><p>Install the Chrome plugin and save your favourite links.</p></li>
+          <li><%= feather('tag', "Tag on save.") %></li>
+          <li><p>Filter and consume your content on our minimalistic UI.</p></li>
+        </ul>
+      </div>
+      <div class='col'>
+        <%= image_pack_tag 'media/images/chrome-badge-big.png' %>
+      </div>
+    </div>
   </div>
 
   <div class='next-features container'>
@@ -32,7 +54,7 @@
         <p class='features-content'> Build up your company's knowledge from crowd-base discoveries. <br /> Share your tags with the rest of the team. </p>
       </div>
       <div class='col'>
-        <p class='features-content'> Adapt every element of the UI based on your personal preferences. <br /> Select per element or directly import your editor configs.</p>
+        <p class='features-content'> Adapt every element of the UI based on your personal preferences. <br /> Select per item or directly import your editor configs.</p>
       </div>
     </div>
     <div class='row'>
@@ -41,21 +63,6 @@
       </div>
       <div class='col'>
         <%= image_pack_tag 'media/images/palette.png' %>
-      </div>
-    </div>
-  </div>
-
-  <div class='how-it-works container'>
-    <div class='row'>
-      <div class='col'>
-        <%= image_pack_tag 'media/images/chrome-badge-big.png' %>
-      </div>
-      <div class='col'>
-        <h2> How it works </h2>
-        <ul>
-          <li>Install the Chrome plugin and save your favourite links.</li>
-          <li>Categorize on save.</li>
-          <li>Filter and consume your content on our minimalistic UI.</li>
       </div>
     </div>
   </div>

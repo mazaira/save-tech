@@ -1,9 +1,17 @@
 .landing {
-  .intro, .heading {
+  .intro, .heading,.how-it-works {
     text-align: center;
   }
 
+  p {
+    font-family: 'Space Mono';
+  }
 
+  li {
+        svg {
+      width: 1rem;
+    }
+  }
   h1 {
     font-family: 'Nunito Black';
     font-weight: 900;
@@ -22,20 +30,60 @@
     border-color: $dark-transparent;
   }
 
+  .heading {
+    height: 85vh;
+
+    h1 {
+      margin-top: 5rem;
+      animation: moveInLeft 2s;
+    }
+
+    h2 {
+      margin-top: 2rem;;
+      animation: moveInRight 2s;
+    }
+
+    img {
+      margin-top: 3rem;
+      animation: moveInBottom 1s ease-out 0.75s;
+      animation-fill-mode: backwards;
+    }
+
+    .btn {
+      margin: 5rem auto;
+      width:  20%;
+      display: block;
+      animation: moveInBottom 1.5s ease-out 0.75s;
+      animation-fill-mode: backwards;
+    }
+  }
+
   .intro, .next-features, .how-it-works {
     padding-bottom: 3rem;
     margin-top: 3rem;
 
   }
 
+  .how-it-works {
+    ul {
+      list-style-type: none;
+    }
+  }
+
+  .video {
+    padding: 0px;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    video {
+      width: 100%;
+      height: auto;
+    }
+  }
+
   .intro{
     .intro-text {
       margin-top: 2rem;
     }
-    p {
-      font-family: 'Space Mono';
-    }
-
   }
   .next-features{
     .col {
