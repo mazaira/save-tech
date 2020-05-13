@@ -1,6 +1,6 @@
 <div class= 'd-flex active-tags'>
   <% if tags %>
-    <%= link_to(tags, filter_items_path(name: tags), class: 'btn btn--themed', remote: true) %>
+    <%= link_to(tags, filter_items_path(name: tags), class: 'btn btn-sm btn-outline-info', remote: true) %>
   <% else %>
     <div class='active-tags-placeholder'>
     </div>
