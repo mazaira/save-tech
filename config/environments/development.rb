@@ -6,6 +6,7 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  config.session_store :cookie_store, key: '_save_tech_session' , domain: '.save-tech.local'
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -53,7 +54,8 @@ Rails.application.configure do
   config.assets.debug = true
 
   config.hosts << /[a-z0-9]+\.ngrok\.io/
-
+  config.hosts << "save-tech.local"
+  config.hosts << "www.save-tech.local"
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
