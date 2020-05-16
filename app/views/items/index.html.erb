@@ -1,16 +1,20 @@
 <div class="container-fluid">
-  <div class='row' >
-    <div class='col-2'>
-      <%= render partial: "tags/menu", locals: { tags: current_user&.owned_tags&.order('taggings_count DESC') } %>
-    </div>
-    <div class='col-10'>
-      <div class= 'col-md-3' id='active-tags'>
-        <%= render partial: "active-tags", locals: { tags: nil } %>
+  <% if current_user.items.count == 0 %>
+    <%= render partial: "welcome" %>
+  <% else %>
+    <div class='row' >
+      <div class='col-2'>
+        <%= render partial: "tags/menu", locals: { tags: current_user&.owned_tags&.order('taggings_count DESC') } %>
       </div>
-      <div id='grid'>
-        <%= render partial: "grid" %>
+      <div class='col-10'>
+        <div class= 'col-md-3' id='active-tags'>
+          <%= render partial: "active-tags", locals: { tags: nil } %>
+        </div>
+        <div id='grid'>
+            <%= render partial: "grid" %>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
 

@@ -1,0 +1,21 @@
+.welcome {
+  text-align: center;
+  h1 {
+    font-family: 'Nunito Black';
+  }
+  h2 {
+    font-family: 'Space Mono';
+    font-weight: 400;
+    color: $dark-transparent;
+  }
+
+    .video {
+    padding: 0px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    video {
+      width: 80%;
+      height: auto;
+    }
+  }
+}
