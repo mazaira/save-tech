@@ -13,6 +13,17 @@ class Item < ApplicationRecord
     JSON.parse(resp.body)['meta']
   end
 
+  require 'open-uri'
+  def noko(item)
+    doc =Nokogiri::HTML(URI.open(item.link))
+
+    title = doc.search('title').text
+    description, image = doc.search("meta[name='description'], meta[property='og:image'], meta[property='og:image:secure_url']").map { |n| n['content'] }.compact
+
+    [title, description, image]
+  end
+
+
   def add_tag(tags)
     user.tag(self, with: tags, on: :tags)
   end
