@@ -2,7 +2,7 @@
   <div class ='d-flex'>
     <%= link_to image_tag(item.image || asset_pack_path('media/images/default.jpg'), class: 'card-img-top', alt: "Icon"), item.link, target: :_blank %>
 
-    <%= link_to item.title.present? ? item.title : item.link, item.link, class: 'h6 card-title', alt: "Title", target: :_blank %>
+    <%= link_to item.title.present? ? item.title[0,70] : item.link, item.link, class: 'h6 card-title', alt: "Title", target: :_blank %>
 
     <div class="dropdown action-box">
       <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
