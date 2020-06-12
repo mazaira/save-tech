@@ -4,6 +4,7 @@ class Item < ApplicationRecord
   has_many :taggings, class_name: 'ActsAsTaggableOn::Tagging', dependent: :destroy
 
   validates :link, url: true
+  validates :image, url: true
 
   acts_as_taggable
 
@@ -15,14 +16,13 @@ class Item < ApplicationRecord
 
   require 'open-uri'
   def noko(item)
-    doc =Nokogiri::HTML(URI.open(item.link))
+    doc = Nokogiri::HTML(URI.open(item.link))
 
     title = doc.search('title').text
     description, image = doc.search("meta[name='description'], meta[property='og:image'], meta[property='og:image:secure_url']").map { |n| n['content'] }.compact
 
     [title, description, image]
   end
-
 
   def add_tag(tags)
     user.tag(self, with: tags, on: :tags)
@@ -33,6 +33,6 @@ class Item < ApplicationRecord
   end
 
   def self.with_tag(name, user)
-    Item.tagged_with( name, on: :tags, owned_by: user)
+    Item.tagged_with(name, on: :tags, owned_by: user)
   end
 end

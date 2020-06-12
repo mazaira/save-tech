@@ -12,11 +12,8 @@ class ItemService
     meta = @item.meta
     return @item unless meta
 
-    @item.update_attributes(
-      description: meta['description'],
-      image:       meta['image'],
-      title:       meta['title'],
-    )
+    @item.update(description: meta['description'], title: meta['title'])
+    @item.update(image: meta['image'])
 
     @item
   end
