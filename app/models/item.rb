@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   has_many :taggings, class_name: 'ActsAsTaggableOn::Tagging', dependent: :destroy
 
   validates :link, url: true
-  validates :image, url: true
+  validates :image, url: { allow_blank: true }
 
   acts_as_taggable
 
